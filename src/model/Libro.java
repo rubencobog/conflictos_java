@@ -3,6 +3,7 @@ package model;
 public class Libro {
     private String isbn;
     private String titulo;
+    private boolean disponible;
     private int reservasActivas;
 
     public Libro(String isbn, String titulo) {

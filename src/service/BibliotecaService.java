@@ -1,9 +1,8 @@
 package service;
 
 import model.Libro;
-import model.Prestamo;
+import model.Reserva;
 import model.Usuario;
-import util.Validador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class BibliotecaService {
             return false;
         }
 
-        if (!Validador.validarUsuario(usuario)) {
+        if (!validarUsuario(usuario)) {
             System.out.println("Error: usuario no válido.");
             return false;
         }
@@ -54,8 +53,9 @@ public class BibliotecaService {
 
         // Realizar la reserva
         libro.setDisponible(false);
-        reservas.add(new Prestamo(usuario, libro));
+        reservas.add(new Reserva(usuario, libro));
         System.out.println("Reserva realizada correctamente");
+        return true;
     }
 
     public void listarReservas() {
