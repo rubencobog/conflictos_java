@@ -1,7 +1,7 @@
 package service;
 
 import model.Libro;
-import model.Reserva;
+import model.Prestamo;
 import model.Usuario;
 import util.Validador;
 
@@ -24,7 +24,7 @@ public class BibliotecaService {
         }
 
         libro.setDisponible(false);
-        reservas.add(new Reserva(usuario, libro));
+        reservas.add(new Prestamo(usuario, libro));
         System.out.println("Reserva realizada correctamente");
     }
 
